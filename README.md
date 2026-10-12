@@ -13,7 +13,7 @@
 2. Create a new connection using `localhost\SQLEXPRESS` as the Server Name.
 3. Run `01-setup.sql` from the repo.
 4. Run the statement and copy out the `ConnectionString`
-  `select
+  ```sqlselect
     'data source=' + @@servername +
     ';TrustServerCertificate=True' +
     ';initial catalog=' + db_name() +
@@ -25,7 +25,8 @@
     end
     as ConnectionString
 from sys.server_principals
-where name = suser_name()`
+where name = suser_name()
+```
 5. Paste it inside the return statement of `GetConnectionString()` method in `Program.cs`
 
 ## How to Run
